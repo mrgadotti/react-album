@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import PhotoAlbum from "react-photo-album";
 
@@ -19,10 +19,27 @@ import "yet-another-react-lightbox/plugins/captions.css";
 
 import photos from "./photos";
 import React from "react";
+import axios from "axios";
 
 const App = () => {
   const [index, setIndex] = useState(-1);
+  /*
+  // busca um json com o nome das imagens para montar a url
+  const api = axios.create({
+    baseURL: "http://192.168.0.190:8000/marcelo/",
+    headers: {
+      "content-type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+    },
+    timeout: 30000,
+  });
 
+  useEffect(() => {
+    api.get("test.json").then((response) => {
+      console.log(JSON.stringify(response.data));
+    });
+  }, []);
+  */
   return (
     <>
       <PhotoAlbum

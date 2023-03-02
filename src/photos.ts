@@ -3,6 +3,7 @@ const unsplashPhotos = [
     { id: 1, src: "http://192.168.0.190:8000/marcelo/imagens/1.jpeg" },
     { id: 2, src: "http://192.168.0.190:8000/marcelo/imagens/2.jpeg" },
     { id: 3, src: "http://192.168.0.190:8000/marcelo/imagens/3.jpeg" },
+    { id: 4, src: "http://192.168.0.190:8000/marcelo/imagens/4.jpeg" },
 ];
 
 const photos = unsplashPhotos.map((photo) => {
