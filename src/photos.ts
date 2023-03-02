@@ -1,4 +1,3 @@
-const breakpoints = [1, 2, 3];
 
 const unsplashPhotos = [
     { id: 1, src: "http://192.168.0.190:8000/marcelo/imagens/1.jpeg" },
@@ -14,7 +13,9 @@ const photos = unsplashPhotos.map((photo) => {
         src: photo.src,
         width,
         height,
-        id: photo.id
+        id: photo.id,
+        // title: "Slide title", 
+        // description: "Slide description"
     };
 });
 
