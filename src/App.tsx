@@ -17,33 +17,35 @@ import "yet-another-react-lightbox/plugins/thumbnails.css";
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/captions.css";
 
-import photos from "./photos";
-import React from "react";
-import axios from "axios";
+// import photos from "./photos";
+import { Images } from "./models";
+import api from "./api";
+// import React from "react";
+// import api from "./api";
 
 const App = () => {
   const [index, setIndex] = useState(-1);
-  /*
+  const [listImg, setListImg] = useState<Images[]>([]);
+
   // busca um json com o nome das imagens para montar a url
-  const api = axios.create({
-    baseURL: "http://192.168.0.190:8000/marcelo/",
-    headers: {
-      "content-type": "application/json",
-      "Access-Control-Allow-Origin": "*",
-    },
-    timeout: 30000,
-  });
 
   useEffect(() => {
-    api.get("test.json").then((response) => {
-      console.log(JSON.stringify(response.data));
+    api.get("api-sample.json").then((response) => {
+      let data: Images[] = [];
+      // console.log(JSON.stringify(response.data[0]));
+      response.data.forEach((val: Images) => {
+        // console.log(val);
+        data.push(val);
+      });
+      // console.log(JSON.stringify(data));
+      setListImg(data);
     });
   }, []);
-  */
+
   return (
     <>
       <PhotoAlbum
-        photos={photos}
+        photos={listImg}
         layout="rows"
         targetRowHeight={200}
         onClick={({ index }) => setIndex(index)}
@@ -73,7 +75,7 @@ const App = () => {
       />
 
       <Lightbox
-        slides={photos}
+        slides={listImg}
         open={index >= 0}
         index={index}
         close={() => setIndex(-1)}

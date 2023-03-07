@@ -1,0 +1,20 @@
+[
+  {
+    "src": "http://192.168.0.190:8000/marcelo/imagens/1.jpeg",
+    "width": 1024,
+    "height": 768,
+    "id": 1
+  },
+  {
+    "src": "http://192.168.0.190:8000/marcelo/imagens/2.jpeg",
+    "width": 1024,
+    "height": 768,
+    "id": 2
+  },
+  {
+    "src": "http://192.168.0.190:8000/marcelo/imagens/3.jpeg",
+    "width": 1024,
+    "height": 768,
+    "id": 3
+  }
+]
